@@ -62,7 +62,17 @@ class StudentMark:
     def get_name(self):
         print("Name: "+self.name)
     def get_mark(self):
-        print("Subject 1:",self.m1,"\nSubject 2:",self.m2,"\nSubject 3:",self.m3)
+        # print("Subject 1:",self.m1,"\nSubject 2:",self.m2,"\nSubject 3:",self.m3)
+        sub=input("Enter the mark you need-m1 or m2 or m3: ")
+        if sub=="m1":
+            print("Subject 1: ",self.m1)
+        elif sub=="m2":
+            print("Subject 2: ",self.m2)
+        elif sub=="m3":
+            print("Subject 2: ",self.m3)
+        else:
+            print('Error')
+        
     def get_total(self):
         print("Total: ",self.m1+self.m2+self.m3)
     def details(self):
@@ -79,11 +89,23 @@ class StudentMark:
 
 sm=StudentMark("Alan Xavier",96,87,69)
 # sm.get_name()
-# sm.get_mark()
-sm.get_total()
-sm.get_total(9)
+sm.get_mark()
+# sm.get_total()
 
 sm.details()
 sm.set_name("Xavier")
 sm.set_mark(78,87,65)
 sm.details()
+
+#inheritance
+
+class People:
+    def __init__(self):
+        print("init in person class")
+class Std(People):
+    def __init__(self):
+        print("init in Std class")
+        ##super().__init__()
+        
+x=Std()
+
